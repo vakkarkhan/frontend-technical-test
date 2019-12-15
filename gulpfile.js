@@ -12,7 +12,7 @@ gulp.task('js', function () {
         .transform('babelify', {presets: ['es2015', 'react']})
         .bundle()
         .pipe(source('app.js'))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('js:watch', function () {

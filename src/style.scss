@@ -1,5 +1,58 @@
-$bg-colour: #ccc;
-
+$bg-colour: #FFF;
+$border-color: #CCC;
 body {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	background-color: $bg-colour;
+	.vehicle-list {
+		min-height: 320px;
+		.vehicle-tile {
+			display: inline-block;
+			vertical-align: top;
+			width: 25%;
+			@media only screen and (min-width: 600px) and (max-width: 992px) {
+				width: 50%;
+			}
+			@media only screen and (max-width: 600px) {
+				width: 100%;
+			}
+			img {
+				display: block;
+				width: 100%;
+				vertical-align: top;
+				@media only screen and (max-width: 600px) {
+					display: inline-block;
+					width: 30%;
+				}
+			}
+			.vehicle-info {
+				display: block;
+				width: 100%;
+				@media only screen and (max-width: 600px) {
+					display: inline-block;
+					width: 70%;
+				}
+				.vehicle-title {
+					display: block;
+					width: 100%;
+					margin: 10px auto;
+					font-weight: bold;
+					text-decoration: overline underline;
+					text-transform: uppercase;
+					text-align: center;
+				}
+				.vehicle-price {
+					margin: 10px auto;
+					text-align: center;
+				}
+				.vehicle-description {
+					margin: 10px auto;
+					text-align: center;
+					min-height: 36px;
+				}
+			}
+
+		}
+
+	}
+
 }

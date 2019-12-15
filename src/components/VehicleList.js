@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { getData } from '../api';
+import { getVehicles } from '../api';
+import VehicleTile from './VehicleTile';
 
 export default
 class VehicleList extends Component {
@@ -13,7 +14,7 @@ class VehicleList extends Component {
 	}
 
 	componentDidMount() {
-		getData((data) => {
+		getVehicles((data) => {
 			this.setState({
 				data
 			})
@@ -21,10 +22,12 @@ class VehicleList extends Component {
 	}
 
 	render() {
-		if(this.state.data) {
-			console.log(this.state.data);
+		const { data } = this.state;
+		if(data) {
 		    return (
-			    <h1>Hello World</h1>
+			    <div className="vehicle-list">
+							{data.map((vehicle, vehicleIndex) => <VehicleTile key={`vehicle-${vehicleIndex}`} {...vehicle} />)}
+					</div>
 		    )
 	    }
 
